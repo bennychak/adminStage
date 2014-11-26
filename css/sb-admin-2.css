@@ -37,6 +37,9 @@
 .tx_r {
   text-align: right;
 }
+.c_success {
+  color: #5cb85c;
+}
 .mt10 {
   margin-top: 10px;
 }
@@ -60,11 +63,12 @@
 }
 .navbar-brand {
   width: 160px;
-  padding: 0;
-  background: url(../assets/images/logo_admin.png) center center no-repeat;
-  background-size: 131px 30px;
-  text-indent: -9999em;
+  padding: 10px 0 0 15px;
   overflow: hidden;
+}
+.navbar-brand img {
+  width: 131px;
+  height: 30px;
 }
 body {
   background-color: #f8f8f8;

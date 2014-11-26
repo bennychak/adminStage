@@ -55,21 +55,21 @@
                         <h3 class="panel-title">微助产品登录</h3>
                     </div>
                     <div class="panel-body" style="padding-top:30px; padding-bottom:50px">
-                        <form role="form" action="person-manage.html" method="post">
+                        <form>
                             <fieldset>
                                 <div class="form-group" style="margin-bottom:20px">
-                                    <input class="form-control" placeholder="邮箱" name="email" type="email" autofocus>
+                                    <input id="email" class="form-control" placeholder="邮箱" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group" style="margin-bottom:35px">
-                                    <input class="form-control" placeholder="密码" name="password" type="password" value="">
+                                    <input id="password" class="form-control" placeholder="密码" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox" style="display:none">
                                     <label>
-                                        <input name="remember" type="checkbox" value="下次自动登录" />下次自动登录
+                                        <input id="remember" name="remember" type="checkbox" value="下次自动登录" />下次自动登录
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input style="background-color:#61bff6; border-color:#48b4f4" type="submit" class="btn btn-lg btn-info btn-block" value="登录" />
+                                <input id="login" style="background-color:#61bff6; border-color:#48b4f4" type="submit" class="btn btn-lg btn-info btn-block" value="登录" />
                             </fieldset>
                         </form>
                     </div>
@@ -91,21 +91,42 @@
     <script src="js/sb-admin-2.js"></script>
 
     <script>
-    // $(function(){
-    //     var GetGroupsAndCars = function() {
-    //     $.ajax({
-    //         url : "/admin/json/AdminService/adminLogin",
-    //         type : "get",
-    //         dataType : "json",
-    //         success : function(data) {
-    //             groupStore = data.carGroupList;
-    //             userGroupId = data.groupId;
-    //             },
-    //         error : function() {
-    //             showalert("获取信息失败");
-    //             }
-    //         }); 
-    //     });
+    $(function(){
+        var login = $('#login'),
+            email = $('#email'),
+            password = $('#password'),
+            cookie = function(n, v, d) {
+                var k = '', D;
+                if (d) {
+                    D = new Date();
+                    D.setTime(D.getTime() + d * 24 * 60 * 60 * 1000);
+                    k = '; expires=' + D.toGMTString();
+                }
+                document.cookie = n + '=' + v + k + '; path=/';
+            };
+        login.on('click', function() {
+            var data = {
+                admin_name: email.val(),
+                admin_password: password.val()
+            };
+            $.ajax({
+                url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogin',
+                type: 'post',
+                data: data,
+                dataType: 'json',
+                success: function(data) {
+                    if(data.result === 'SUCC') {
+                        // 注入cookie
+                        cookie('x-session-key', data.session_key, 0.25);
+                        // 刷新页面
+                        location.href = location.origin + '/adminStage/person-manage.html';
+                    } else {
+                        // 错误提示逻辑
+                    }
+                }
+            });
+        });
+    });
     </script>
 
 </body>

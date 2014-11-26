@@ -14,9 +14,6 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- plugin CSS -->
-    <link href="css/plugins/dataTables.bootstrap.css" rel="stylesheet">
-
     <!-- MetisMenu CSS -->
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
@@ -96,11 +93,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse in">
+                            <ul class="nav nav-second-level collapse">
                                 <li>
-                                    <a class="active" href="info-manage.html">信息管理</a>
+                                    <a href="info-manage.html">信息管理</a>
                                 </li>
                                 <li>
                                     <a href="person-manage.html">人员管理</a>
@@ -116,14 +113,14 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
+                            <ul class="nav nav-second-level collapse in">
                                 <li>
                                     <a href="notice-create.html">发布通知</a>
                                 </li>
                                 <li>
-                                    <a href="notice-manage.html">通知管理</a>
+                                    <a class="active" href="notice-manage.html">通知管理</a>
                                 </li>
                             </ul>
                         </li>
@@ -138,7 +135,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header tx_yh">信息管理</h1>
+                    <h1 class="page-header tx_yh">内容详情</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -147,56 +144,40 @@
                 <div class="col-lg-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
-                <form role="form" class="form-info" action="info-view.html">
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">                        
-                                <label>公司名称<span class="brand-warning">*</span></label>
-                                <input type="text" name="infoName" class="form-control" maxlength="20" />
-                            </div>
+                        <div class="form-group col-lg-8">                    
+                            <label>通知类型</label>
+                            <p>临时通知</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-2">
-                            <div class="form-group">
-                                <label>联系电话</label>
-                                <input type="text" class="form-control" maxlength="30" />
-                            </div>
+                        <div class="form-group col-lg-4">                    
+                            <label>群发对象<span class="brand-warning">*</span></label>
+                            <p>公司全体员工</p>
                         </div>
-                        <div class="col-md-2">
-                            <div class="form-group">                    
-                                <label>行业类型<span class="brand-warning">*</span></label>
-                                <select name="infoKind" id="" class="form-control">
-                                    <option value="">-</option>
-                                    <option value="金融">金融</option>
-                                </select>
-                            </div>
+                        <div class="form-group col-lg-4">    
+                            <label>发送时间</label>
+                            <p>15:00</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>E-mail</label>
-                                <p>index.aspx@163.com</p>
-                            </div>
-                        </div>
-                    </div>   
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">                        
-                                <label>通讯地址</label>
-                                <input type="text" class="form-control" />
-                            </div>
+                        <div class="form-group col-lg-8">                    
+                            <label>通知标题</label>
+                            <p>关于2015年春节放假的安排</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <button disabled="disabled" type="submit" class="btn btn-primary">保存</button>
-                            </div>
+                        <div class="form-group col-lg-8">                    
+                            <label>通知内容</label>
+                            <p>天涯有人讨论：如何在X宝买又便宜，质量又好的衣服鞋子？答案来了，关键是看卖家发货地，有人总结了窍门：针织看东莞，韩国大衣看大连，日单韩单看青岛，外贸鞋看惠州，山寨分好坏，好山寨看浙江，烂山寨看广州，转给需要的人，不谢。</p>
                         </div>
-                    </div>   
-                </form>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <a href="javascript:history.back(-1)" class="btn btn-default">返回</a>
+                            <a href="./notice-edit.html" class="btn btn-primary">转发</a>
+                        </div>
+                    </div>
                 </div>
                 </div>
                 </div>
@@ -213,51 +194,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- bootstrapValidator JavaScript -->
-    <script src="js/bootstrapValidator.js"></script>
-
-    <!-- bootstrapValidator JavaScript -->
-    <script src="js/zh_CN.js"></script>
-
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-
-    $(document).ready(function() {
-
-        
-        $('.form-info').bootstrapValidator({
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                infoName: {
-                    validators: {
-                        notEmpty: {
-                            message : '<span class="brand-warning">请填写公司名称</span>'
-                        }
-                    }
-                },
-                infoKind: {
-                    validators: {
-                        notEmpty: {
-                            message : '<span class="brand-warning">请选择行业类型</span>'
-                        }
-                    }
-                }
-            }
-        });
-
-    });
-
-    </script>
 
 </body>
 

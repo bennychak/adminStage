@@ -229,7 +229,7 @@
                             <!-- /.table-responsive -->
                         </div>
                         <div class="col-lg-12">
-                            <button type="submit" class="btn btn-primary">创建</button>
+                            <button type="button" class="btn btn-primary" id="btn-dialog-roleSucc">创建</button>
                         </div>
                     </div>          
                 </form>
@@ -242,6 +242,25 @@
 
     </div>
     <!-- /#wrapper -->
+
+    <!-- succuss -->
+    <div class="modal fade" id="dialog-roleSucc" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+          </div>
+          <div class="modal-body">
+            角色创建成功！
+          </div>
+          <div class="modal-footer">
+            <a href="./role-manage.html" class="btn btn-default">查看角色</a>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">继续创建</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
@@ -265,6 +284,15 @@
     <script>
 
     $(document).ready(function() {
+
+        $('#btn-dialog-roleSucc').click(function(){
+            $('#dialog-roleSucc').modal('show');
+        });
+
+        $(window).bind('beforeunload',function(){
+            // 判断是否已保存
+            // return '页面信息尚未保存，离开将导致信息丢失';
+        });
 
         
         $('.form-ro').bootstrapValidator({
