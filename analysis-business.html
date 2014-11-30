@@ -33,11 +33,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-    #dataTables-account_filter,
-    #dataTables-account_length{ display:none}
-    </style>
-
 </head>
 
 <body>
@@ -90,14 +85,14 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse in">
+                            <ul class="nav nav-second-level collapse">
                                 <li>
                                     <a href="account-create.html">创建帐号</a>
                                 </li>
                                 <li>
-                                    <a class="active" href="account-manage.html">帐号管理</a>
+                                    <a href="account-manage.html">帐号管理</a>
                                 </li>
                             </ul>
                         </li>
@@ -149,11 +144,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="#">统计分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
+                            <ul class="nav nav-second-level collapse in">
                                 <li>
-                                    <a href="analysis-business.html">业务统计</a>
+                                    <a class="active" href="analysis-business.html">业务统计</a>
                                 </li>
                                 <li>
                                     <a href="analysis-learn.html">学习统计</a>
@@ -179,7 +174,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header tx_yh">帐号管理</h1>
+                    <h1 class="page-header tx_yh">业务统计</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -187,68 +182,13 @@
             <div class="row">
                 <div class="col-lg-12">
                 <div class="panel panel-default">
+                <div class="panel-heading">
+                    XX图表
+                </div>
                 <div class="panel-body">
-                <form role="form" action="">
-                    <div class="form-inline">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="form-group">
-                                    <input class="btn btn-default" type="button" value="导出帐号" />
-                                </div>
-                            </div>
-                            <div class="col-lg-9 tx_r">
-                                <div class="form-group">
-                                    <select name="kind" id="" class="form-control">
-                                        <option value="">帐号状态</option>
-                                        <option value="正常">正常</option>
-                                        <option value="冻结">冻结</option>
-                                    </select>
-                                    <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control" />
-                                </div>
-                                <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
-                            </div>
-                        </div>
+                    <div class="flot-chart">
+                        <div class="flot-chart-content" id="flot-line-chart"></div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-account">
-                                    <thead>
-                                        <tr>
-                                            <th><input type="checkbox" name="table-item" /></th>
-                                            <th class="name">名称</th>
-                                            <th>权限</th>
-                                            <th>邮箱</th>
-                                            <th>开通时间（排序）</th>
-                                            <th>帐号状态</th>
-                                            <th>操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><input type="checkbox" name="table-item" /></td>
-                                            <td>课程管理员</td>
-                                            <td>增删改</td>
-                                            <td>index.aspx@163.com</td>
-                                            <td>2011-1-11 1:11:00</td>
-                                            <td>正常</td>
-                                            <td>
-                                                <a class="mr10" href="account-edit.html">编辑</a>
-                                                <a href="account-on.html">开启</a>
-                                                <span class="gray-light">开启</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                            <div>
-                                <button type="submit" class="btn btn-default">冻结</button>
-                                <button type="submit" class="btn btn-primary">删除</button>
-                            </div>
-                        </div>
-                    </div>          
-                </form>
                 </div>
                 </div>
                 </div>
@@ -268,45 +208,16 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <!-- Flot Charts JavaScript -->
+    <script src="js/plugins/flot/excanvas.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/flot-data.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-account').dataTable({
-            'ordering' : false,
-            'info' : false,
-            'oLanguage' : {
-                'sLengthMenu' : '每页显示 _MENU_ 条记录',
-                'sZeroRecord' : '抱歉，没有找到',
-                'sInfo' : '从_START_到_END_/共_TOTAL_条数据',
-                'sInfoEmpty' : '没有数据',
-                'sInfoFiltered' : '(从_MAX_条数据中检索)',
-                'oPaginate' : {
-                    'sFirst' : '首页',
-                    'sPrevious' : '前一页',
-                    'sNext' : '后一页',
-                    'sLast' : '尾页'
-                },
-                'sZeroRecords' : '没有检索到数据'
-            },
-            'dom' : 'rt<"bottom"flp>'
-        });
-        var table = $('#dataTables-account').DataTable();
-        //var nameCol = table.column(colIdx);
-        //alert(table.columns().colIdx);
-        $('#dt-sch-btn').on('click',function(){
-            // table.column('.name').search(this.value).draw();
-            var name = $('#dt-sch-name').val();
-            table.search(name).draw();
-        });
-    });
-    </script>
 
 </body>
 
