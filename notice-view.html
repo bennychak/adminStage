@@ -1,34 +1,53 @@
+<!-- header inc/header.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>微助产品后台</title>
+<title>微助产品后台</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- MetisMenu CSS -->
-    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+<!-- bootstrapValidator CSS -->
+<link href="./bootstrap/dist/css/bootstrapValidator.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+<!-- plugin CSS -->
+<link href="./bootstrap/dist/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+<link href="./bootstrap/dist/css/plugins/dataTables/dataTables.tableTools.css" rel="stylesheet">
+<link href="./bootstrap/dist/css/plugins/dataTables/dataTables.editor.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- MetisMenu CSS -->
+<link href="./bootstrap/dist/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!-- fuelux -->
+<link href="//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="./bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="./bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- Morris Charts CSS -->
+<link href="./bootstrap/dist/css/plugins/morris.css" rel="stylesheet">
+
+<!-- timePicker CSS -->
+<link href="./bootstrap/dist/css/plugins/bootstrap-timepicker.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- /header -->
 
 </head>
 
@@ -45,27 +64,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand tx_yh" href="index.html" title="微助后台"><img alt="微助后台" src="./assets/images/logo_admin.png" /></a>
+                <a class="navbar-brand tx_yh" href="index.html" title="微助后台"><img alt="微助后台" src="./bootstrap/assets/images/logo_admin.png" /></a>
             </div>
             <!-- /.navbar-header -->
 
+            <!-- top inc/top.html -->
             <ul class="nav navbar-top-links navbar-right">
-                <li><span>Benny Chia, 下午好！</span></li>
-                <li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-gear fa-fw"></i> 设置
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="pw-correct.html"><i class="fa fa-key fa-fw"></i> 修改密码</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
+    <li><span>Benny Chia, 下午好！</span></li>
+    <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-gear fa-fw"></i> 设置
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+            <li><a href="pw-correct.html"><i class="fa fa-key fa-fw"></i> 修改密码</a>
+            </li>
+            <li class="divider"></li>
+            <li><a id="logout" href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+            </li>
+        </ul>
+    </li>
+    <!-- /.dropdown -->
+</ul>
+<!-- /.navbar-top-links -->
+            <!-- /top -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -224,17 +245,46 @@
     </div>
     <!-- /#wrapper -->
 
+    <!-- foot-js inc/foot-js.html -->
     <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+<script src="./bootstrap/dist/js/jquery-1.11.0.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+<!-- fuelux JavaScript -->
+<script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
+<!-- selectlist JavaScript -->
+<script src="./bootstrap/dist/js/plugins/selectlist.js"></script>
+
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/bootstrapValidator.js"></script>
+
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/zh_CN.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="./bootstrap/dist/js/plugins/dataTables/jquery.dataTables.js"></script>
+<!-- script src="./bootstrap/dist/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.editor.min.js"></script -->
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./bootstrap/dist/js/sb-admin-2.js"></script>
+
+<!-- fileUpload JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-filestyle.min.js"></script>
+
+<!-- timePicker Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-timepicker.min.js"></script>
+
+<!-- Data JavaScript -->
+<script src="./bootstrap/dist/js/data.js"></script>
+    <!-- /foot-js -->
 
 </body>
 

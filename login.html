@@ -12,22 +12,23 @@
     <title>微助产品后台</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="./bootstrap/dist/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="./bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <style>
     html,body{ height:100%}
-    body{ background:#53a0ce url(./assets/images/bg_login.jpg) center center no-repeat; background-size:cover;}
-    .panel-heading{ background:url(./assets/images/logo_login.png) center center no-repeat; height:100px}
+    body{ background:#53a0ce url(./bootstrap/assets/images/bg_login.jpg) center center no-repeat; background-size:cover;}
+    .panel-heading{ background:url(./bootstrap/assets/images/logo_login.png) center center no-repeat; height:100px}
     .panel-heading h3{ display:none}
+    .panel-body{padding-top:30px; padding-bottom:50px}
     @media(min-width:0){
         .panel-heading{ background-size:128px 37px; height:50px}
     }
@@ -54,22 +55,25 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">微助产品登录</h3>
                     </div>
-                    <div class="panel-body" style="padding-top:30px; padding-bottom:50px">
-                        <form>
+                    <div class="panel-body">
+                        <form id="login_form" action="">
                             <fieldset>
-                                <div class="form-group" style="margin-bottom:20px">
-                                    <input id="email" class="form-control" placeholder="邮箱" name="email" type="email" autofocus>
+                                <div class="form-group">
+                                    <div style="display:none" id="login_alert" class="alert alert-warning well-sm"></div>
                                 </div>
-                                <div class="form-group" style="margin-bottom:35px">
-                                    <input id="password" class="form-control" placeholder="密码" name="password" type="password" value="">
+                                <div class="form-group">
+                                    <input id="login_email" class="form-control" placeholder="邮箱" name="admin_email" type="text" autofocus="true" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="login_pass" class="form-control" placeholder="密码" name="admin_password" type="password" value="">
                                 </div>
                                 <div class="checkbox" style="display:none">
                                     <label>
-                                        <input id="remember" name="remember" type="checkbox" value="下次自动登录" />下次自动登录
+                                        <input id="login_remember" name="login_remember" type="checkbox" value="下次自动登录" />下次自动登录
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <input id="login" style="background-color:#61bff6; border-color:#48b4f4" type="submit" class="btn btn-lg btn-info btn-block" value="登录" />
+                                <input id="login_btn" type="button" class="btn btn-lg btn-info btn-block" value="登录" />
                             </fieldset>
                         </form>
                     </div>
@@ -78,56 +82,46 @@
         </div>
     </div>
 
+    <!-- foot-js inc/foot-js.html -->
     <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
+<script src="./bootstrap/dist/js/jquery-1.11.0.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+<!-- fuelux JavaScript -->
+<script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
+<!-- selectlist JavaScript -->
+<script src="./bootstrap/dist/js/plugins/selectlist.js"></script>
 
-    <script>
-    $(function(){
-        var login = $('#login'),
-            email = $('#email'),
-            password = $('#password'),
-            cookie = function(n, v, d) {
-                var k = '', D;
-                if (d) {
-                    D = new Date();
-                    D.setTime(D.getTime() + d * 24 * 60 * 60 * 1000);
-                    k = '; expires=' + D.toGMTString();
-                }
-                document.cookie = n + '=' + v + k + '; path=/';
-            };
-        login.on('click', function() {
-            var data = {
-                admin_name: email.val(),
-                admin_password: password.val()
-            };
-            $.ajax({
-                url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogin',
-                type: 'post',
-                data: data,
-                dataType: 'json',
-                success: function(data) {
-                    if(data.result === 'SUCC') {
-                        // 注入cookie
-                        cookie('x-session-key', data.session_key, 0.25);
-                        // 刷新页面
-                        location.href = location.origin + '/adminStage/person-manage.html';
-                    } else {
-                        // 错误提示逻辑
-                    }
-                }
-            });
-        });
-    });
-    </script>
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/bootstrapValidator.js"></script>
+
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/zh_CN.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="./bootstrap/dist/js/plugins/dataTables/jquery.dataTables.js"></script>
+<!-- script src="./bootstrap/dist/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.editor.min.js"></script -->
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./bootstrap/dist/js/sb-admin-2.js"></script>
+
+<!-- fileUpload JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-filestyle.min.js"></script>
+
+<!-- timePicker Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-timepicker.min.js"></script>
+
+<!-- Data JavaScript -->
+<script src="./bootstrap/dist/js/data.js"></script>
+    <!-- /foot-js -->
 
 </body>
 

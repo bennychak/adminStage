@@ -1,0 +1,409 @@
+<!-- header inc/header.html -->
+@@include('inc/header.html')
+<!-- /header -->
+
+<style>
+#dataTables-department_filter,
+#dataTables-department_length{ display:none}
+#dataTables-department tr td:last-child{ white-space:nowrap;}
+</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">折叠导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand tx_yh" href="index.html" title="微助后台"><img alt="微助后台" src="./bootstrap/assets/images/logo_admin.png" /></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <!-- top inc/top.html -->
+            @@include('inc/top.html')
+            <!-- /top -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="role-create.html">创建角色</a>
+                                </li>
+                                <li>
+                                    <a href="role-manage.html">角色管理</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="account-create.html">创建帐号</a>
+                                </li>
+                                <li>
+                                    <a href="account-manage.html">帐号管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse in">
+                                <li>
+                                    <a href="info-manage.html">信息管理</a>
+                                </li>
+                                <li>
+                                    <a href="person-manage.html">人员管理</a>
+                                </li>
+                                <li>
+                                    <a class="active" href="department-manage.html">部门管理</a>
+                                </li>
+                                <li>
+                                    <a href="job-manage.html">职务管理</a>
+                                </li>
+                                <li>
+                                    <a href="title-manage.html">职级管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="notice-create.html">发布通知</a>
+                                </li>
+                                <li>
+                                    <a href="notice-manage.html">通知管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">课程管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="course-create.html">添加课程</a>
+                                </li>
+                                <li>
+                                    <a href="course-publish.html">推送发布</a>
+                                </li>
+                                <li>
+                                    <a href="course-published.html">已发布课程</a>
+                                </li>
+                                <li>
+                                    <a href="course-manage.html">课程库</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">统计分析<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="analysis-business.html">业务统计</a>
+                                </li>
+                                <li>
+                                    <a href="analysis-learn.html">学习统计</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">任务考核<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="taskText-intro.html">XX考核</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header tx_yh">部门管理</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#department-add" data-toggle="tab">添加部门</a></li>
+                </ul>
+                <div class="tab-content mt10">
+                    <div class="tab-pane fade active in" id="department-add">
+                        <form class="form-department" role="form" action="">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label>部门名称<span class="brand-warning">*</span></label>
+                                        <input type="text" name="dpName" class="form-control" maxlength="100" />
+                                    </div>
+                                    <div class="form-group">                 
+                                        <label>组织结构<span class="brand-warning">*</span></label>
+                                        <select style="display:none" class="form-control">
+                                            <option value="在线视频部">┏┳┓┣╋┫┗┻┛━┃在线视频部</option>
+                                        </select>
+                                        <!-- <select class="form-control">
+                                            <option value="公司">公司</option>
+                                            <option value="总办">- 总办</option>
+                                            <option value="网络媒体事业群"> 网络媒体事业群</option>
+                                            <option value="华东广告拓展一组">--| 华东广告拓展一组</option>
+                                            <option value="社交网络事业群">社交网络事业群</option>
+                                        </select> -->
+                                        <div class="input-group">
+                                            <!-- 模拟select -->
+                                            <div class="btn-group selectlist" data-resize="auto" data-initialize="selectlist" id="selectlistIllustration">
+                                                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">
+                                                  <span class="selected-label" style="width: 67px;">总办</span>
+                                                  <span class="caret"></span>
+                                                  <span class="sr-only">Toggle Dropdown</span>
+                                                </button>
+                                                <ul class="dropdown-menu" role="menu">
+                                                  <li data-value="互动娱乐部"><a href="#">公司</a></li>
+                                                  <li data-value="互动娱乐部" data-selected="true" style="text-indent:23px"><a href="#">总办</a></li>
+                                                  <li data-value="在线视频部" style="text-indent:23px"><a href="#">网络媒体事业群</a></li>
+                                                  <li data-value="互动娱乐部" style="text-indent:46px"><a href="#">华东广告拓展一组</a></li>
+                                                  <li data-value="在线视频部"><a href="#">社交网络事业群</a></li>
+                                                  <li data-value="体育部" data-foo="bar" data-fizz="buzz"><a href="#">合作企业</a></li>
+                                                </ul>
+                                                <input class="hidden hidden-field" name="selectlistIllustrationInput" id="selectlistIllustrationInput" readonly="readonly" aria-hidden="true" type="text">
+                                            </div>
+                                            <input type="hidden" value="在线视频部" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input disabled="disabled" type="submit" class="btn btn-primary" value="添加分类" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form role="form" action="">
+                            <div class="form-inline">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <input class="btn btn-default" type="button" value="导出" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 tx_r">
+                                        <div class="form-group">
+                                            <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control" />
+                                        </div>
+                                        <button id="dt-sch-btn" type="button" class="btn btn-default">查找</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table style="table-layout:fixed" class="table table-striped table-bordered table-hover" id="dataTables-department">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="name">部门名称</th>
+                                                        <th>组织结构</th>
+                                                        <th>备注</th>
+                                                        <th>操作</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <!-- /.table-responsive -->
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Preview -->
+    <div class="modal fade" id="dialog-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">预览</h4>
+          </div>
+          <div class="modal-body">
+            <p><strong>关于2015年春节放假的通知</strong></p>
+            天涯有人讨论：如何在X宝买又便宜，质量又好的衣服鞋子？答案来了，关键是看卖家发货地，有人总结了窍门：针织看东莞，韩国大衣看大连，日单韩单看青岛，外贸鞋看惠州，山寨分好坏，好山寨看浙江，烂山寨看广州，转给需要的人，不谢。
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" id="btn-preview-alert">发送</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert -->
+    <div class="modal fade" id="dialog-alert" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">通知发送成功！</h4>
+          </div>
+          <div class="modal-body">
+            您可在<a href="notice-manage.html">通知管理</a>中查看已发布的通知
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- foot-js inc/foot-js.html -->
+    @@include('inc/foot-js.html')
+    <!-- /foot-js -->
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+        
+    // var editor;
+
+    $(document).ready(function() {
+
+        $('.seList').selectlist();
+        
+        $('.form-department').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                dpName: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请填写部门名称</span>'
+                        }
+                    }
+                }
+                // ,
+                // dpForm: {
+                //     validatorones: {
+                //         notEmpty: {
+                //             message : '<span class="brand-warning">请选择组织结构</span>'
+                //         }
+                //     }
+                // }
+            }
+        });
+
+        $('#dataTables-department').dataTable({
+            "ajax": './bootstrap/data-example/data-department.json',
+            'ordering' : false,
+            'info' : false,
+            columns: [
+                { data: "dpName" },
+                {
+                    data: null,
+                    defaultContent : '\
+                    <div class="input-group"> \
+                        <div class="btn-group selectlist" data-resize="auto" data-initialize="selectlist" id="selectlistIllustration"> \
+                            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button"> \
+                              <span class="selected-label" style="width: 67px;">总办</span> \
+                              <span class="caret"></span> \
+                              <span class="sr-only">Toggle Dropdown</span> \
+                            </button> \
+                            <ul class="dropdown-menu" role="menu"> \
+                              <li data-value="互动娱乐部"><a href="#">公司</a></li> \
+                              <li data-value="互动娱乐部" data-selected="true" style="text-indent:23px"><a href="#">总办</a></li> \
+                              <li data-value="在线视频部" style="text-indent:23px"><a href="#">网络媒体事业群</a></li> \
+                              <li data-value="互动娱乐部" style="text-indent:46px"><a href="#">华东广告拓展一组</a></li> \
+                              <li data-value="在线视频部"><a href="#">社交网络事业群</a></li> \
+                              <li data-value="体育部" data-foo="bar" data-fizz="buzz"><a href="#">合作企业</a></li> \
+                            </ul> \
+                            <input class="hidden hidden-field" name="selectlistIllustrationInput" id="selectlistIllustrationInput" readonly="readonly" aria-hidden="true" type="text"> \
+                        </div> \
+                        <input type="hidden" value="在线视频部" /> \
+                    </div>',
+                    orderable : false
+                },
+                { data: "dpNote" },
+                { data: null, defaultContent: "<a class='mr10' href='###'>保存</a> <a href='###'>删除</a>", orderable: false }
+            ],
+            'oLanguage' : {
+                'sLengthMenu' : '每页显示 _MENU_ 条记录',
+                'sZeroRecord' : '抱歉，没有找到',
+                'sInfo' : '从_START_到_END_/共_TOTAL_条数据',
+                'sInfoEmpty' : '没有数据',
+                'sInfoFiltered' : '(从_MAX_条数据中检索)',
+                'oPaginate' : {
+                    'sFirst' : '首页',
+                    'sPrevious' : '前一页',
+                    'sNext' : '后一页',
+                    'sLast' : '尾页'
+                },
+                'sZeroRecords' : '没有检索到数据'
+            },
+            'dom' : 'rt<"bottom"flp>'
+        });
+
+        // editor = new $.fn.dataTable.Editor({
+        //     ajax: "data-department.json",
+        //     table: "#dataTables-department",
+        //     fields: [ {
+        //             label: "部门名称",
+        //             name: "dpName"
+        //         }, {
+        //             label: "备注",
+        //             name: "dpNote"
+        //         }
+        //     ]
+        // });
+
+        // $('#dataTables-department').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        //     editor.inline(this);
+        // } );
+
+        var table = $('#dataTables-department').DataTable();
+        //var nameCol = table.column(colIdx);
+        //alert(table.columns().colIdx);
+        $('#dt-sch-btn').on('click',function(){
+            // table.column('.name').search(this.value).draw();
+            var name = $('#dt-sch-name').val();
+            table.search(name).draw();
+        });
+
+    });
+
+    </script>
+
+</body>
+
+</html>
+

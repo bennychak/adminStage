@@ -1,0 +1,303 @@
+<!-- header inc/header.html -->
+@@include('inc/header.html')
+<!-- /header -->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">折叠导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand tx_yh" href="index.html" title="微助后台"><img alt="微助后台" src="./bootstrap/assets/images/logo_admin.png" /></a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <!-- top inc/top.html -->
+            @@include('inc/top.html')
+            <!-- /top -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="role-create.html">创建角色</a>
+                                </li>
+                                <li>
+                                    <a href="role-manage.html">角色管理</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li class="active">
+                            <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse in">
+                                <li>
+                                    <a class="active" href="account-create.html">创建帐号</a>
+                                </li>
+                                <li>
+                                    <a href="account-manage.html">帐号管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="info-manage.html">信息管理</a>
+                                </li>
+                                <li>
+                                    <a href="person-manage.html">人员管理</a>
+                                </li>
+                                <li>
+                                    <a href="department-manage.html">部门管理</a>
+                                </li>
+                                <li>
+                                    <a href="job-manage.html">职务管理</a>
+                                </li>
+                                <li>
+                                    <a href="title-manage.html">职级管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="notice-create.html">发布通知</a>
+                                </li>
+                                <li>
+                                    <a href="notice-manage.html">通知管理</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">课程管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="course-create.html">添加课程</a>
+                                </li>
+                                <li>
+                                    <a href="course-publish.html">推送发布</a>
+                                </li>
+                                <li>
+                                    <a href="course-published.html">已发布课程</a>
+                                </li>
+                                <li>
+                                    <a href="course-manage.html">课程库</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">统计分析<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="analysis-business.html">业务统计</a>
+                                </li>
+                                <li>
+                                    <a href="analysis-learn.html">学习统计</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">任务考核<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="taskText-intro.html">XX考核</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header tx_yh">开启帐号</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <form role="form" class="form-ac" action="">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">                        
+                                <label>名称<span class="brand-warning">*</span></label>
+                                <input type="text" name="acName" class="form-control" value="课程管理员" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>邮箱<span class="brand-warning">*</span></label>
+                                <input type="text" name="acMail" class="form-control" value="index@163.com" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>密码<span class="brand-warning">*</span></label>
+                                <input type="text" data-bv-stringlength="true" data-bv-stringlength-max="22" data-bv-stringlength-min="6" name="pwNew" class="form-control" maxlength="22" value="admin888" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="">权限<span class="brand-warning">*</span></label>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>角色管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 创建角色</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改角色</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除角色</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>帐号管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 创建帐号</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改帐号</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除帐号</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>人员管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加人员</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改人员</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除人员</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>部门管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加部门</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改部门</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除部门</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>职务管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加职务</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改职务</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除职务</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>职级管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加职级</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 修改职级</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 删除职级</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>课程管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加、修改、删除课程</label>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 发布课程</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>通知管理</strong></td>
+                                            <td>
+                                                <label class="checkbox-inline"><input type="checkbox" name="" /> 添加、修改、删除、发布通知</label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                            <button type="button" class="btn btn-default">取消</button>
+                            <button type="submit" class="btn btn-primary">保存并开启</button>
+                        </div>
+                    </div>          
+                </form>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- foot-js inc/foot-js.html -->
+    @@include('inc/foot-js.html')
+    <!-- /foot-js -->
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+
+    $(document).ready(function() {
+
+        
+        $('.form-ac').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                acName: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请填写名称</span>'
+                        }
+                    }
+                },
+                acMail: {
+                    validators: {
+                        emailAddress: {
+                            message : '<span class="brand-warning">请输入正确的邮箱地址</span>'
+                        }
+                    }
+                },
+                pwNew: {
+                    validators: {
+                        notEmpty: {
+                            message : '<span class="brand-warning">请输入新密码</span>'
+                        },
+                        stringLength: {
+                            message : '密码长度在6~22位之间'
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+
+    </script>
+
+</body>
+
+</html>
+
