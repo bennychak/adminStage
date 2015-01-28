@@ -90,98 +90,102 @@
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="role-create.html">创建角色</a>
-                                </li>
-                                <li>
-                                    <a href="role-manage.html">角色管理</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="account-create.html">创建帐号</a>
-                                </li>
-                                <li>
-                                    <a href="account-manage.html">帐号管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="info-manage.html">信息管理</a>
-                                </li>
-                                <li>
-                                    <a href="person-manage.html">人员管理</a>
-                                </li>
-                                <li>
-                                    <a href="department-manage.html">部门管理</a>
-                                </li>
-                                <li>
-                                    <a href="job-manage.html">职务管理</a>
-                                </li>
-                                <li>
-                                    <a href="title-manage.html">职级管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="notice-create.html">发布通知</a>
-                                </li>
-                                <li>
-                                    <a href="notice-manage.html">通知管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">课程管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="course-create.html">添加课程</a>
-                                </li>
-                                <li>
-                                    <a href="course-publish.html">推送发布</a>
-                                </li>
-                                <li>
-                                    <a href="course-published.html">已发布课程</a>
-                                </li>
-                                <li>
-                                    <a href="course-manage.html">课程库</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">统计分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="analysis-business.html">业务统计</a>
-                                </li>
-                                <li>
-                                    <a href="analysis-learn.html">学习统计</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">任务考核<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="taskText-intro.html">XX考核</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+
+                <!-- nav inc/nav.html -->
+                <ul class="nav" id="side-menu">
+    <li class="item role">
+        <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="role-create.html">创建角色</a>
+            </li>
+            <li>
+                <a href="role-manage.html">角色管理</a>
+            </li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+    <li class="item account">
+        <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="account-create.html">创建帐号</a>
+            </li>
+            <li>
+                <a href="account-manage.html">帐号管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item enterprise">
+        <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="enterprise-infomanage.html">信息管理</a>
+            </li>
+            <li>
+                <a href="enterprise-personmanage.html">人员管理</a>
+            </li>
+            <li>
+                <a href="enterprise-departmentmanage.html">部门管理</a>
+            </li>
+            <li>
+                <a href="enterprise-jobmanage.html">职务管理</a>
+            </li>
+            <li>
+                <a href="enterprise-titlemanage.html">职级管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item notice">
+        <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="notice-create.html">发布通知</a>
+            </li>
+            <li>
+                <a href="notice-manage.html">通知管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item course">
+        <a href="#">课程管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="course-create.html">添加课程</a>
+            </li>
+            <li>
+                <a href="course-publish.html">推送发布</a>
+            </li>
+            <li>
+                <a href="course-published.html">已发布课程</a>
+            </li>
+            <li>
+                <a href="course-manage.html">课程库</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item analysis">
+        <a href="#">统计分析<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="analysis-business.html">业务统计</a>
+            </li>
+            <li>
+                <a href="analysis-learn.html">学习统计</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item tasktest">
+        <a href="#">任务考核<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="tasktest-intro.html">XX考核</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+                <!-- /nav -->
+                
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
@@ -359,7 +363,35 @@
 
     </script>
 
+<!-- footer inc/footer.html -->
+<script>
+$(function(){
+
+    // 当前页面导航active
+    function pageName(){
+        var na = [];
+        var strUrl=location.href;
+        var arrUrl=strUrl.split("/");
+        var strUrlName=arrUrl[arrUrl.length-1];
+
+        var strItem=strUrlName;
+        var arrItem=strItem.split("-");
+        var strItemName=arrItem[0];
+
+        na[0]=strUrlName;
+        na[1]=strItemName;
+        return na;
+    }
+
+    // 显示nav区块
+    $('#side-menu .' + pageName()[1]).find('.nav').addClass('in');
+    // li加类
+    $('#side-menu .' + pageName()[1]).addClass('active');
+    // 链接加类
+    $('[href="'+ pageName()[0] +'"]').addClass('active');
+    
+});
+</script>
 </body>
-
 </html>
-
+<!-- /footer -->

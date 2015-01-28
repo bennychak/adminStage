@@ -1,2 +1,30 @@
+<script>
+$(function(){
+
+    // 当前页面导航active
+    function pageName(){
+        var na = [];
+        var strUrl=location.href;
+        var arrUrl=strUrl.split("/");
+        var strUrlName=arrUrl[arrUrl.length-1];
+
+        var strItem=strUrlName;
+        var arrItem=strItem.split("-");
+        var strItemName=arrItem[0];
+
+        na[0]=strUrlName;
+        na[1]=strItemName;
+        return na;
+    }
+
+    // 显示nav区块
+    $('#side-menu .' + pageName()[1]).find('.nav').addClass('in');
+    // li加类
+    $('#side-menu .' + pageName()[1]).addClass('active');
+    // 链接加类
+    $('[href="'+ pageName()[0] +'"]').addClass('active');
+    
+});
+</script>
 </body>
 </html>

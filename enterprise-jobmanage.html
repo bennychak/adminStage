@@ -1,5 +1,52 @@
 <!-- header inc/header.html -->
-@@include('inc/header.html')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>微助产品后台</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- bootstrapValidator CSS -->
+<link href="./bootstrap/dist/css/bootstrapValidator.min.css" rel="stylesheet">
+
+<!-- plugin CSS -->
+<link href="./bootstrap/dist/css/plugins/dataTables.bootstrap.css" rel="stylesheet">
+<link href="./bootstrap/dist/css/plugins/dataTables/dataTables.tableTools.css" rel="stylesheet">
+<link href="./bootstrap/dist/css/plugins/dataTables/dataTables.editor.min.css" rel="stylesheet">
+
+<!-- MetisMenu CSS -->
+<link href="./bootstrap/dist/css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+<!-- fuelux -->
+<link href="//www.fuelcdn.com/fuelux/3.2.1/css/fuelux.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="./bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="./bootstrap/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<!-- Morris Charts CSS -->
+<link href="./bootstrap/dist/css/plugins/morris.css" rel="stylesheet">
+
+<!-- timePicker CSS -->
+<link href="./bootstrap/dist/css/plugins/bootstrap-timepicker.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 <!-- /header -->
 
     <style>
@@ -28,103 +75,123 @@
             <!-- /.navbar-header -->
 
             <!-- top inc/top.html -->
-            @@include('inc/top.html')
+            <ul class="nav navbar-top-links navbar-right">
+    <li><span>Benny Chia, 下午好！</span></li>
+    <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-gear fa-fw"></i> 设置
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+            <li><a href="pw-correct.html"><i class="fa fa-key fa-fw"></i> 修改密码</a>
+            </li>
+            <li class="divider"></li>
+            <li><a id="logout" href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+            </li>
+        </ul>
+    </li>
+    <!-- /.dropdown -->
+</ul>
+<!-- /.navbar-top-links -->
             <!-- /top -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="role-create.html">创建角色</a>
-                                </li>
-                                <li>
-                                    <a href="role-manage.html">角色管理</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="account-create.html">创建帐号</a>
-                                </li>
-                                <li>
-                                    <a href="account-manage.html">帐号管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="active">
-                            <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse in">
-                                <li>
-                                    <a href="info-manage.html">信息管理</a>
-                                </li>
-                                <li>
-                                    <a href="person-manage.html">人员管理</a>
-                                </li>
-                                <li>
-                                    <a href="department-manage.html">部门管理</a>
-                                </li>
-                                <li>
-                                    <a class="active" href="job-manage.html">职务管理</a>
-                                </li>
-                                <li>
-                                    <a href="title-manage.html">职级管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="notice-create.html">发布通知</a>
-                                </li>
-                                <li>
-                                    <a href="notice-manage.html">通知管理</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">课程管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="course-create.html">添加课程</a>
-                                </li>
-                                <li>
-                                    <a href="course-publish.html">推送发布</a>
-                                </li>
-                                <li>
-                                    <a href="course-published.html">已发布课程</a>
-                                </li>
-                                <li>
-                                    <a href="course-manage.html">课程库</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">统计分析<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="analysis-business.html">业务统计</a>
-                                </li>
-                                <li>
-                                    <a href="analysis-learn.html">学习统计</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">任务考核<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="taskText-intro.html">XX考核</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+
+                <!-- nav inc/nav.html -->
+                <ul class="nav" id="side-menu">
+    <li class="item role">
+        <a href="#"><span class="icoplace"><i class="fa fa-users"></i></span>角色管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="role-create.html">创建角色</a>
+            </li>
+            <li>
+                <a href="role-manage.html">角色管理</a>
+            </li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+    <li class="item account">
+        <a href="#"><span class="icoplace"><i class="fa fa-user"></i></span>帐号管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="account-create.html">创建帐号</a>
+            </li>
+            <li>
+                <a href="account-manage.html">帐号管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item enterprise">
+        <a href="#"><span class="icoplace"><i class="fa fa-building"></i></span>企业管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="enterprise-infomanage.html">信息管理</a>
+            </li>
+            <li>
+                <a href="enterprise-personmanage.html">人员管理</a>
+            </li>
+            <li>
+                <a href="enterprise-departmentmanage.html">部门管理</a>
+            </li>
+            <li>
+                <a href="enterprise-jobmanage.html">职务管理</a>
+            </li>
+            <li>
+                <a href="enterprise-titlemanage.html">职级管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item notice">
+        <a href="#"><span class="icoplace"><i class="fa fa-volume-up"></i></span>通知管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="notice-create.html">发布通知</a>
+            </li>
+            <li>
+                <a href="notice-manage.html">通知管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item course">
+        <a href="#">课程管理<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="course-create.html">添加课程</a>
+            </li>
+            <li>
+                <a href="course-publish.html">推送发布</a>
+            </li>
+            <li>
+                <a href="course-published.html">已发布课程</a>
+            </li>
+            <li>
+                <a href="course-manage.html">课程库</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item analysis">
+        <a href="#">统计分析<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="analysis-business.html">业务统计</a>
+            </li>
+            <li>
+                <a href="analysis-learn.html">学习统计</a>
+            </li>
+        </ul>
+    </li>
+    <li class="item tasktest">
+        <a href="#">任务考核<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level collapse">
+            <li>
+                <a href="tasktest-intro.html">XX考核</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+                <!-- /nav -->
+                
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
@@ -251,7 +318,44 @@
     </div>
 
     <!-- foot-js inc/foot-js.html -->
-    @@include('inc/foot-js.html')
+    <!-- jQuery Version 1.11.0 -->
+<script src="./bootstrap/dist/js/jquery-1.11.0.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- fuelux JavaScript -->
+<script src="//www.fuelcdn.com/fuelux/3.2.1/js/fuelux.min.js"></script>
+
+<!-- selectlist JavaScript -->
+<script src="./bootstrap/dist/js/plugins/selectlist.js"></script>
+
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/bootstrapValidator.js"></script>
+
+<!-- bootstrapValidator JavaScript -->
+<script src="./bootstrap/dist/js/zh_CN.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="./bootstrap/dist/js/plugins/dataTables/jquery.dataTables.js"></script>
+<!-- script src="./bootstrap/dist/js/plugins/dataTables/dataTables.tableTools.min.js"></script>
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.editor.min.js"></script -->
+<script src="./bootstrap/dist/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="./bootstrap/dist/js/sb-admin-2.js"></script>
+
+<!-- fileUpload JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-filestyle.min.js"></script>
+
+<!-- timePicker Plugin JavaScript -->
+<script src="./bootstrap/dist/js/plugins/bootstrap-timepicker.min.js"></script>
+
+<!-- Data JavaScript -->
+<script src="./bootstrap/dist/js/data.js"></script>
     <!-- /foot-js -->
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
@@ -330,7 +434,35 @@
     });
     </script>
 
+<!-- footer inc/footer.html -->
+<script>
+$(function(){
+
+    // 当前页面导航active
+    function pageName(){
+        var na = [];
+        var strUrl=location.href;
+        var arrUrl=strUrl.split("/");
+        var strUrlName=arrUrl[arrUrl.length-1];
+
+        var strItem=strUrlName;
+        var arrItem=strItem.split("-");
+        var strItemName=arrItem[0];
+
+        na[0]=strUrlName;
+        na[1]=strItemName;
+        return na;
+    }
+
+    // 显示nav区块
+    $('#side-menu .' + pageName()[1]).find('.nav').addClass('in');
+    // li加类
+    $('#side-menu .' + pageName()[1]).addClass('active');
+    // 链接加类
+    $('[href="'+ pageName()[0] +'"]').addClass('active');
+    
+});
+</script>
 </body>
-
 </html>
-
+<!-- /footer -->

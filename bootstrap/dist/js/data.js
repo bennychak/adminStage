@@ -59,7 +59,18 @@ $(function(){
 
     logout.on('click',function(){
 
-        cookie('x-session-key',0,-1);
+        // 通知后台
+        $.ajax({
+            url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogout',
+            type: 'get',
+            dataType: 'json',
+            success: function(data){
+
+            // 清除cookie
+            cookie('x-session-key',0,-1)
+
+            }
+        });
 
     });
 
