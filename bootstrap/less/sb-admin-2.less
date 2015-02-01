@@ -11,21 +11,19 @@ body {
 
 #wrapper {
     width: 100%;
+    min-width:1200px;
 }
 
 #page-wrapper {
-    padding: 0 15px;
-    min-height: 568px;
-    background-color: white;
+    position: inherit;
+    width:1200px;
+    margin:36px auto 88px;
+    padding:0 30px 0 209px;
+    border: 1px solid darken(@gray-lightest, 6.5%);
 }
-
-@media(min-width:768px) {
-    #page-wrapper {
-        position: inherit;
-        margin: 0 0 0 250px;
-        padding: 0 30px;
-        border-left: 1px solid darken(@gray-lightest, 6.5%);
-    }
+.page-wrapper-inner{
+    border-left: 1px solid darken(@gray-lightest, 6.5%);
+    padding-left:30px;
 }
 
 // Navigation
@@ -134,19 +132,17 @@ body {
     padding-left: 52px;
 }
 
-@media(min-width:768px) {
-    .sidebar {
-        z-index: 1;
-        position: absolute;
-        width: 250px;
-        margin-top: 51px;
-    }
+.sidebar {
+    z-index: 1;
+    position: absolute;
+    width: 210px;
+    top:87px; left:1px;
+}
 
-    .navbar-top-links .dropdown-messages,
-    .navbar-top-links .dropdown-tasks,
-    .navbar-top-links .dropdown-alerts {
-        margin-left: auto;
-    }
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    margin-left: auto;
 }
 
 // Buttons

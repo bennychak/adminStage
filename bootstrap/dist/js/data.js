@@ -19,37 +19,49 @@ $(function(){
         login_email = $('#login_email'),
         login_password = $('#login_pass'),
         login_form = $('#login_form'),
-        login_alert = $('#login_alert');
+        login_alert = $('#login_alert'),
+        submitLogin = function(){
+
+            // 获取控件输入的值
+            var data = {
+                admin_email: login_email.val(),
+                admin_password: login_password.val()
+            };
+
+            $.ajax({
+                url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogin',
+                type: 'post',
+                data: data,
+                dataType: 'json',
+                success: function(data) {
+                    if(data.result === 'SUCC'){
+
+                        // 注入cookie 名值时间
+                        cookie('x-session-key', data.session_key, 0.25);
+                        // 刷新页面
+
+                        login_form[0].action = login_form.attr('role');
+                        login_form[0].submit();
+                        //location.href = location.origin + login_form.attr('role');
+
+                    }else{
+                        login_alert.text(data.fail_text).show();
+                    }
+                }
+            });
+
+        }
+
+    login_form.keydown(function(e){ 
+        var curKey = e.which;
+        if(curKey == 13){ 
+            login_btn.click(); 
+            return false; 
+        } 
+    }); 
 
     login_btn.on('click', function() {
-
-        // 获取控件输入的值
-        var data = {
-            admin_email: login_email.val(),
-            admin_password: login_password.val()
-        };
-
-        $.ajax({
-            url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogin',
-            type: 'post',
-            data: data,
-            dataType: 'json',
-            success: function(data) {
-            	if(data.result === 'SUCC'){
-
-                    // 注入cookie 名值时间
-                    cookie('x-session-key', data.session_key, 0.25);
-                    // 刷新页面
-
-                    login_form[0].action = './person-manage.html';
-                    login_form[0].submit();
-                    //location.href = location.origin + './person-manage.html';
-
-            	}else{
-            		login_alert.text(data.fail_text).show();
-            	}
-            }
-        });
+        submitLogin();
     });
 
     // 登出

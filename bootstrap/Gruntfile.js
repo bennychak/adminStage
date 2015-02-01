@@ -80,33 +80,12 @@ module.exports = function (grunt) {
       options: {
         banner: '<%= banner %>\n<%= jqueryCheck %>',
         stripBanners: false
-      },
-      bootstrap: {
-        src: [
-          'js/transition.js',
-          'js/alert.js',
-          'js/button.js',
-          'js/carousel.js',
-          'js/collapse.js',
-          'js/dropdown.js',
-          'js/modal.js',
-          'js/tooltip.js',
-          'js/popover.js',
-          'js/scrollspy.js',
-          'js/tab.js',
-          'js/affix.js'
-        ],
-        dest: 'dist/js/<%= pkg.name %>.js'
       }
     },
 
     uglify: {
       options: {
         preserveComments: 'some'
-      },
-      bootstrap: {
-        src: '<%= concat.bootstrap.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
       },
       custom: {
         src: 'js/data.js',
@@ -127,23 +106,11 @@ module.exports = function (grunt) {
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
+          sourceMapURL: '<%= pkg.name %>-bootstrap.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-bootstrap.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>.css': 'less/bootstrap.less'
-        }
-      },
-      compileTheme: {
-        options: {
-          strictMath: true,
-          sourceMap: true,
-          outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-theme.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-theme.css.map'
-        },
-        files: {
-          'dist/css/<%= pkg.name %>-theme.css': 'less/theme.less'
+          'dist/css/bootstrap.css': 'less/bootstrap.less'
         }
       },
       compileCustom: {
@@ -151,11 +118,35 @@ module.exports = function (grunt) {
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
-          sourceMapURL: '<%= pkg.name %>-custom.css.map',
-          sourceMapFilename: 'dist/css/<%= pkg.name %>-custom.css.map'
+          sourceMapURL: '<%= pkg.name %>-sb-admin-2.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-sb-admin-2.css.map'
         },
         files: {
-          'dist/css/<%= pkg.name %>-custom.css': 'less/custom.less'
+          'dist/css/sb-admin-2.css': 'less/sb-admin-2.less'
+        }
+      },
+      compileMixin: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>-mixin.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-mixin.css.map'
+        },
+        files: {
+          'dist/css/mixins.css': 'less/mixins.less'
+        }
+      },
+      compileCourse: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>-course.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-course.css.map'
+        },
+        files: {
+          'dist/css/course.css': 'less/course.less'
         }
       }
     },
@@ -438,8 +429,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme', 'less:compileCustom']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer', 'usebanner', 'csscomb', 'cssmin']);
+  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileCustom', 'less:compileMixin', 'less:compileCourse']);
+  grunt.registerTask('dist-css', ['less-compile', 'usebanner', 'cssmin']);
 
   // Docs distribution task.
   grunt.registerTask('dist-docs', 'copy:docs');

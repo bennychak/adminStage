@@ -18,6 +18,8 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 
+            <div class="navbar-inner">
+
             <!-- top inc/top.html -->
             @@include('inc/top.html')
             <!-- /top -->
@@ -33,25 +35,29 @@
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
+
+            </div>
+            
         </nav>
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <div class="page-wrapper-inner">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                     <h1 class="page-header tx_yh">通知管理</h1>
                 </div>
-                <!-- /.col-lg-12 -->
+                <!-- /.col-xs-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
                 <form role="form" action="">
                     <div class="form-inline">
                         <div class="row">
-                            <div class="col-lg-12 tx_r">
+                            <div class="col-xs-12 tx_r">
                                 <div class="form-group">
                                     <select name="noticeCate" id="data-select-cate" class="form-control">
                                         <option value="">通知类型</option>
@@ -63,7 +69,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-xs-12">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-notice" style="table-layout:fixed">
                                         <thead>
@@ -93,6 +99,7 @@
                 </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- /#page-wrapper -->
 

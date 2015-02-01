@@ -6,7 +6,6 @@
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="">
 
@@ -57,6 +56,8 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+            <div class="navbar-inner">
 
             <!-- top inc/top.html -->
             <div class="navbar-header">
@@ -191,24 +192,28 @@
                 <!-- /.sidebar-collapse -->
             </div>
             <!-- /.navbar-static-side -->
+
+            </div>
+            
         </nav>
 
         <!-- Page Content -->
         <div id="page-wrapper">
+            <div class="page-wrapper-inner">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                     <h1 class="page-header tx_yh">编辑内容</h1>
                 </div>
-                <!-- /.col-lg-12 -->
+                <!-- /.col-xs-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-xs-12">
                 <div class="panel panel-default">
                 <div class="panel-body">
                 <form id="form-notice" class="form-notice" role="form" action="">
                     <div class="row">
-                        <div class="form-group col-md-3">                    
+                        <div class="form-group col-xs-3">                    
                             <label>通知类型</label>
                             <select name="" id="notice-cateOption" class="form-control">
                                 <option value="临时通知">临时通知</option>
@@ -216,7 +221,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <div class="form-inline col-md-12">
+                        <div class="form-inline col-xs-12">
                             <div id="notice-addCate" class="form-group">
                                 <input type="button" class="btn btn-primary js-notice-cate" value="添加通知类型" />
                             </div>
@@ -232,7 +237,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-12">                    
+                        <div class="form-group col-xs-12">                    
                             <label>群发对象<span class="brand-warning">*</span></label>
                             <div class="input-group">
                                 <!-- 模拟select -->
@@ -255,7 +260,7 @@
                                 <input type="hidden" value="在线视频部" />
                             </div>
                         </div>
-                        <div class="form-group col-md-3">                    
+                        <div class="form-group col-xs-3">                    
                             <label>发送时间（24小时内）</label>
                             <div class="input-append bootstrap-timepicker">
                                 <input id="sendTime" type="text" class="form-control" data-minute-step="30" />
@@ -266,7 +271,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                             <div class="form-group">
                                 <label>通知标题</label>
                                 <input type="text" class="form-control" maxlength="100" value="关于2015年春节放假的通知" />
@@ -274,7 +279,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-xs-5">
                             <div class="form-group">
                                 <label>通知内容<span class="brand-warning">*</span></label>
                                 <textarea name="noticeCon" id="" rows="5" class="form-control">天涯有人讨论：如何在X宝买又便宜，质量又好的衣服鞋子？答案来了，关键是看卖家发货地，有人总结了窍门：针织看东莞，韩国大衣看大连，日单韩单看青岛，外贸鞋看惠州，山寨分好坏，好山寨看浙江，烂山寨看广州，转给需要的人，不谢。</textarea>
@@ -282,7 +287,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-xs-6">
                             <a href="./notice-manage.html" class="btn btn-default"a>取消</a>
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#dialog-preview">预览</button>
                             <button type="button" class="btn btn-primary" id="btn-dialog-alert">发布</button>
@@ -293,6 +298,7 @@
                 </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- /#page-wrapper -->
 
