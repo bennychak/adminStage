@@ -198,7 +198,7 @@
         <div class="page-wrapper-inner">
             <div class="row">
                 <div class="col-xs-12">
-                    <h1 class="page-header tx_yh">添加课程</h1>
+                    <h1 class="page-header tx_yh">推送发布</h1>
                 </div>
                 <!-- /.col-xs-12 -->
             </div>
@@ -208,51 +208,35 @@
 
                     <div class="course_editor clearfix">
                         <div class="course_editor_c1">
-                            <div class="course_info_preview">
+                            <div class="course_info_preview" style="display:none">
                                 <div class="info_cover">
                                     <i class="placetxt">封面图片</i>
                                     <!-- 上传后异步更改img的src -->
                                     <img id="info_cover_img" src="" alt="" />
                                     <div class="info_desc">标题在这里最长30个汉字，允许折行，最多显示两行，标题居中 左对齐</div>
-                                    <div class="mask">
-                                        <div class="mask_pos">
-                                            <a title="编辑" href="###" class="edit js_edit_1"><i class="fa fa-pencil"></i></a>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="section_list">
                                     <ul class="clearfix">
                                         <!-- role自增长 -->
                                         <li class="item" role="1">
                                             <div class="section_txt"><span class="placetxt">章节标题</span><span class="txt"><!-- 标题位置 --></span></div>
-                                            <div class="mask">
-                                                <div class="mask_pos">
-                                                    <a title="编辑" href="###" class="edit js_edit_2"><i class="fa fa-pencil"></i></a>
-                                                    <a title="删除" href="###" class="delete"><i class="fa fa-trash-o"></i></a>
-                                                </div>
-                                            </div>
                                         </li>
                                         <li class="item" role="2">
                                             <div class="section_txt"><span class="placetxt">章节标题</span><span class="txt"><!-- 标题位置 --></span></div>
-                                            <div class="mask">
-                                                <div class="mask_pos">
-                                                    <a title="编辑" href="###" class="edit js_edit_2"><i class="fa fa-pencil"></i></a>
-                                                    <a title="删除" href="###" class="delete"><i class="fa fa-trash-o"></i></a>
-                                                </div>
-                                            </div>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="section_add">
-                                <button class="btn btn-default"><i class="fa fa-plus"></i> 添加章节</button>
+                                <button class="btn btn-default"><i class="fa fa-file"></i> 选择课程</button>
+                                <!-- <button class="btn btn-default"><i class="fa fa-file"></i> 修改课程</button> -->
                             </div>
                         </div>
                         <div class="course_editor_c2">
 
-                            <!-- panel_1 -->
-                            <div id="panel_1">
-                            <form class="form-course" action="">
+                            <!-- panel_editpublish -->
+                            <div id="panel_editpublish">
+                            <form class="form-course" action="./course-publish.html">
                             <div class="panel panel-default panel-courseEdit">
                                 <span class="arr-a"></span>
                                 <span class="arr-b"></span>
@@ -260,115 +244,108 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="form-group">                        
-                                                <label>课程名称<span class="brand-warning">*</span></label>
-                                                <input name="courseName" type="text" class="form-control" maxlength="30" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="form-group">                        
-                                                <label>作者<span class="brand-warning">*</span></label>
-                                                <input name="courseAuthor" type="text" class="form-control" maxlength="30" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="form-group">
-                                                <label>课件封面<span class="brand-warning">*</span></label>
-                                                <input name="courseCover" type="file" value="文件上传" />
-                                                <p class="help-block">大图片建议尺寸：900像素 * 500像素jpg、png、gif格式</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="form-group">                        
-                                                <label>课程链接</label>
-                                                <input type="text" class="form-control" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <div class="form-group">                        
-                                                <label>课程类型</label>
-                                                <select id="" name="courseCate" class="form-control">
-                                                    <option value="其他">其他</option>
+                                                <label>推送人群<span class="brand-warning">*</span></label>
+                                                <select name="courseGroup" class="form-control">
+                                                    <option value="">选择推送人群</option>
+                                                    <option value="视频事业部">视频事业部</option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="form-group">                    
-                                                <label>课程内容</label>
-                                                <div>
-
-                                                <!--style给定宽度可以影响编辑器的最终宽度-->
-                                                <script type="text/plain" id="courseEditor" style="width:100%;height:240px;">
-                                                    <p>在此输入课程内容</p>
-                                                </script>
-
-                                                </div>
-                                                <p class="help-block">(自动保存：2014-11-06 17:51:22)</p>
+                                        <div class="form-inline col-xs-12">
+                                            <div class="form-group">                        
+                                                <label>推送目录<span class="brand-warning">*</span> <a href="./help.html" title="目录说明"><i class="fa fa-question-circle"></i></a></label>
+                                            </div>
+                                        </div>
+                                        <div class="form-inline col-xs-12">
+                                            <div class="form-group">
+                                                <select name="courseMenu" class="form-control">
+                                                    <option value="">选择推送目录</option>
+                                                    <option value="其他">一级分类</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="#"><i class="fa fa-plus"></i> 添加一级分类</a>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                            <div class="form-ele-btm col-xs-12">
-                                <input type="button" class="btn btn-default" value="预览" data-toggle="modal" data-target="#course-create-preview" />
-                                <input type="submit" class="btn btn-primary" value="保存" />
-                            </div>
-                            </div>
-                            </form>
-                            </div>
-                            <!-- /panel_1 -->
-                            <!-- panel_2 -->
-                            <div id="panel_2" style="display:none; margin-top:190px">
-                            <form action="">
-                            <div class="panel panel-default panel-courseEdit">
-                                <span class="arr-a"></span>
-                                <span class="arr-b"></span>
-                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <!-- 一级分类添加 -->
+                                                <div class="publishCate">
+                                                    <div class="avatar">
+                                                        <img src="./bootstrap/assets/images/nopic.png" alt="" />
+                                                    </div>
+                                                    <div class="con">
+                                                        <div class="form-group">
+                                                            <input placeholder="输入分类名称，最多5个字符" type="text" class="form-control" maxlength="5" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input id="catePicFile" type="file" class="btn btn-default" value="选择图片" />
+                                                            <p class="help-block">支持jpg, png, gif，144*144像素，小于30k</p>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="button" class="btn btn-default" value="取消" />
+                                                            <input type="button" class="btn btn-primary" value="添加" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 选择一级分类后显示 -->
+                                    <div class="row">
+                                        <div class="form-inline col-xs-12">
+                                            <div class="form-group">
+                                                <select name="courseList" class="form-control">
+                                                    <option value="二级分类">二级分类</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="#"><i class="fa fa-plus"></i> 添加二级分类</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <!-- 二级分类添加 -->
+                                                <div class="publishCate">
+                                                    <div class="con">
+                                                        <div class="form-group">
+                                                            <input placeholder="输入分类名称，最多5个字符" type="text" class="form-control" maxlength="5" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="button" class="btn btn-default" value="取消" />
+                                                            <input type="button" class="btn btn-primary" value="添加" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="form-group">                        
-                                                <label>章节名称<span class="brand-warning">*</span></label>
-                                                <input type="text" class="form-control" maxlength="30" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xs-12">
-                                            <div class="form-group">                    
-                                                <label>课程内容</label>
-                                                <div>
-
-                                                <!--style给定宽度可以影响编辑器的最终宽度-->
-                                                <script type="text/plain" id="courseEditor2" style="width:100%;height:240px;">
-                                                    <p>在此输入课程内容</p>
-                                                </script>
-
-                                                </div>
-                                                <p class="help-block">(自动保存：2014-11-06 17:51:22)</p>
+                                                <label>标签</label>
+                                                <input type="text" class="form-control" />
+                                                <p class="help-block">可添加5个标签，标签之间用“,”隔开，建议体现时间、地点、人群等</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                            <div class="form-ele-btm col-xs-12">
-                                <input type="button" class="btn btn-default" value="预览" />
-                                <input type="submit" class="btn btn-primary" value="保存" />
-                            </div>
+                                <div class="form-ele-btm col-xs-12">
+                                    <input type="button" class="btn btn-default" value="预览" data-toggle="modal" data-target="#course-create-preview" />
+                                    <input type="submit" class="btn btn-primary" value="发布" />
+                                </div>
                             </div>
                             </form>
                             </div>
-                            <!-- /panel_2 -->
+                            <!-- /panel_editpublish -->
 
                         </div>
                     </div>
@@ -452,7 +429,7 @@
 $(function(){
 
 //上传input
-$(":file").filestyle({buttonName: "btn-default"});
+$("#catePicFile").filestyle({buttonName: "btn-default", buttonText: "选择分类图片"});
         
 $('.form-course').bootstrapValidator({
     feedbackIcons: {
@@ -461,44 +438,24 @@ $('.form-course').bootstrapValidator({
         validating: 'glyphicon glyphicon-refresh'
     },
     fields: {
-        courseName: {
+        courseGroup: {
             validators: {
                 notEmpty: {
-                    message : '<span class="brand-warning">必须填写课程名称</span>'
+                    message : '<span class="brand-warning">推送人群必选</span>'
                 }
             }
         },
-        courseAuthor: {
+        courseMenu: {
             validators: {
                 notEmpty: {
-                    message : '<span class="brand-warning">必须填写作者</span>'
+                    message : '<span class="brand-warning">推送目录必选</span>'
                 }
             }
         }
     }
 });
 
-//课程编辑
-$('.js_edit_1').click(function(){
-    $('#panel_1,#panel_2').hide();
-    $('#panel_1').show();
 });
-$('.js_edit_2').click(function(){
-    var h = $(this).parents('.item')[0].clientHeight;
-    var sort = $(this).parents('.item').attr('role') - 1;
-    $('#panel_1,#panel_2').hide();
-    $('#panel_2').show().css({'marginTop': sort * h + 190 + 'px'});
-    un = UM.getEditor('courseEditor2');
-});
-
-});
-</script>
-
-<script type="text/javascript">
-
-//实例化编辑器
-var um = UM.getEditor('courseEditor');
-
 </script>
 
 <!-- footer inc/footer.html -->

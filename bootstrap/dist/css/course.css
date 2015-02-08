@@ -11,7 +11,7 @@
   margin-right: 30px;
 }
 .course_info_preview {
-  padding: 15px 0;
+  padding: 15px 0 0;
 }
 .course_info_preview .info_cover {
   position: relative;
@@ -33,7 +33,8 @@
   text-align: center;
 }
 .course_info_preview #info_cover_img {
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 .course_info_preview .info_desc {
   position: absolute;
@@ -103,23 +104,60 @@
 .course_info_preview .section_list .item .mask .edit {
   margin-right: 10px;
 }
-.course_info_preview .section_add {
-  padding: 15px 15px 0;
+.section_add {
+  padding: 15px;
 }
-.course_info_preview .section_add .btn {
+.section_add .btn {
   display: block;
   width: 100%;
   border-style: dotted;
 }
 .course_editor .course_editor_c2 {
-  overflow: hidden;
+  width: 578px;
+  float: left;
 }
 .form-ele-btm {
-  padding-left: 365px;
   padding-bottom: 70px;
 }
 .form-ele-btm input {
   width: 106px;
   margin-right: 20px;
+}
+.panel-courseEdit {
+  position: relative;
+}
+.panel-courseEdit .arr-a,
+.panel-courseEdit .arr-b {
+  position: absolute;
+  top: 13px;
+  left: -12px;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 12px 12px 12px 0;
+  border-style: dashed solid dashed dashed;
+  border-color: transparent #dddddd transparent transparent;
+}
+.panel-courseEdit .arr-b {
+  left: -10px;
+  border-right-color: #ffffff;
+}
+/* course-publish */
+.publishCate {
+  background: #f4f4f4;
+  padding: 15px 15px 0;
+}
+.publishCate .avatar {
+  border: #ddd 1px solid;
+  margin-right: 15px;
+  float: left;
+}
+.publishCate .avatar img {
+  width: 80px;
+  height: 80px;
+}
+.publishCate .con {
+  overflow: hidden;
 }
 /*# sourceMappingURL=bootstrap-course.css.map */

@@ -77,6 +77,10 @@
 </div>
 <!-- /.navbar-header -->
 
+<style>
+.navbar-top-links .dropdown-menu li .w{ display:inline-block; vertical-align:middle; width:20px; text-align:center;}
+</style>
+
 <ul class="nav navbar-top-links navbar-right">
     <li><span>Benny Chia, 下午好！</span></li>
     <li>
@@ -84,10 +88,12 @@
             <i class="fa fa-gear fa-fw"></i> 设置
         </a>
         <ul class="dropdown-menu dropdown-user">
-            <li><a href="password-reset.html"><i class="fa fa-key fa-fw"></i> 修改密码</a>
+            <li><a href="password-reset.html"><i class="w"><i class="fa fa-key fa-fw"></i></i> 修改密码</a>
+            </li>
+            <li><a href="help.html"><i class="w"><i class="fa fa-question-circle"></i></i> 帮助</a>
             </li>
             <li class="divider"></li>
-            <li><a id="logout" href="login.html"><i class="fa fa-sign-out fa-fw"></i> 退出</a>
+            <li><a id="logout" href="login.html"><i class="w"><i class="fa fa-sign-out fa-fw"></i></i> 退出</a>
             </li>
         </ul>
     </li>
@@ -169,25 +175,6 @@
             </li>
             <li>
                 <a href="course-manage.html">课程库</a>
-            </li>
-        </ul>
-    </li>
-    <li class="item analysis">
-        <a href="#">统计分析<span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level collapse">
-            <li>
-                <a href="analysis-business.html">业务统计</a>
-            </li>
-            <li>
-                <a href="analysis-learn.html">学习统计</a>
-            </li>
-        </ul>
-    </li>
-    <li class="item tasktest">
-        <a href="#">任务考核<span class="fa arrow"></span></a>
-        <ul class="nav nav-second-level collapse">
-            <li>
-                <a href="tasktest-intro.html">XX考核</a>
             </li>
         </ul>
     </li>
@@ -350,6 +337,11 @@
 
 <!-- fileUpload JavaScript -->
 <script src="./bootstrap/dist/js/plugins/bootstrap-filestyle.min.js"></script>
+
+<!-- fileUpload -->
+<script src="./bootstrap/dist/js/plugins/fileUpload/jquery.ui.widget.js"></script>
+<script src="./bootstrap/dist/js/plugins/fileUpload/jquery.iframe-transport.js"></script>
+<script src="./bootstrap/dist/js/plugins/fileUpload/jquery.fileupload.js"></script>
 
 <!-- timePicker Plugin JavaScript -->
 <script src="./bootstrap/dist/js/plugins/bootstrap-timepicker.min.js"></script>
