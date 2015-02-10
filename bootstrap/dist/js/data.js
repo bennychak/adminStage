@@ -16,7 +16,6 @@ $(function(){
 
     // 获取登录控件
     var login_btn = $('#login_btn'),
-        login_submit = $('#login_submit'),
         login_email = $('#login_email'),
         login_password = $('#login_pass'),
         login_form = $('#login_form'),
@@ -42,7 +41,7 @@ $(function(){
                         // 刷新页面
 
                         login_form.attr('action',login_form.attr('role'));
-                        login_submit.trigger('click');
+                        login_form[0].submit();
                         //location.href = location.origin + login_form.attr('role');
 
                     }else{
