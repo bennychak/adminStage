@@ -30,7 +30,7 @@ $(function(){
 
             $.ajax({
                 url: 'http://218.241.220.36:8099/admin/json/AdminService/adminLogin',
-                type: 'post',
+                type: 'get',
                 data: data,
                 dataType: 'json',
                 success: function(data) {
