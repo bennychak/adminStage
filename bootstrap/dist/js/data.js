@@ -55,13 +55,13 @@ $(function(){
     login_form.keydown(function(e){ 
         var curKey = e.which;
         if(curKey == 13){ 
-            login_btn.click(); 
+            //login_btn.click(); 
             return false; 
         } 
     }); 
 
     login_btn.on('click', function() {
-        submitLogin();
+        //submitLogin();
     });
 
     // 登出
