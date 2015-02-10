@@ -41,7 +41,7 @@ $(function(){
                         cookie('x-session-key', data.session_key, 0.25);
                         // 刷新页面
 
-                        login_form[0].action = login_form.attr('role');
+                        login_form.attr('action',login_form.attr('role'));
                         login_submit.trigger('click');
                         //location.href = location.origin + login_form.attr('role');
 
