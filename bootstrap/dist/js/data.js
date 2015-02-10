@@ -38,9 +38,9 @@ $(function(){
 
                         // 注入cookie 名值时间
                         cookie('x-session-key', data.session_key, 0.25);
-                        // 刷新页面
 
-                        login_form.attr('action',login_form.attr('role'));
+                        // 刷新页面
+                        login_form[0].action = login_form.attr('role');
                         login_form[0].submit();
                         //location.href = location.origin + login_form.attr('role');
 
@@ -55,13 +55,13 @@ $(function(){
     login_form.keydown(function(e){ 
         var curKey = e.which;
         if(curKey == 13){ 
-            //login_btn.click(); 
+            submitLogin(); 
             return false; 
         } 
     }); 
 
     login_btn.on('click', function() {
-        //submitLogin();
+        submitLogin();
     });
 
     // 登出
