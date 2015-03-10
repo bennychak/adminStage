@@ -2,6 +2,8 @@
 @@include('inc/header.html')
 <!-- /header -->
 
+<link href="./bootstrap/dist/css/course.css" rel="stylesheet">
+
 <style>
 #dataTables-course_filter,
 #dataTables-course_length{ display:none}
@@ -86,7 +88,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
@@ -98,7 +100,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
@@ -110,7 +112,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
@@ -122,7 +124,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
@@ -134,7 +136,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
@@ -165,6 +167,46 @@
     <!-- foot-js inc/foot-js.html -->
     @@include('inc/foot-js.html')
     <!-- /foot-js -->
+
+    <!-- Preview -->
+    <div class="modal fade" id="course-detail-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:352px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">课程预览</h4>
+          </div>
+          <div class="modal-body">
+            <div class="course_editor clearfix">
+                <div class="course_editor_c1">
+                    <div class="course_info_preview">
+                        <div class="info_cover">
+                            <i class="placetxt">封面图片</i>
+                            <!-- 上传后异步更改img的src -->
+                            <img id="info_cover_img" src="http://www.lorempixel.com/290/160/" alt="" />
+                            <div class="info_desc">Course Name</div>
+                        </div>
+                        <div class="section_list">
+                            <ul class="clearfix">
+                                <!-- role自增长 -->
+                                <li class="item" role="1">
+                                    <div class="section_txt"><span class="txt">Section 1</span></div>
+                                </li>
+                                <li class="item" role="2">
+                                    <div class="section_txt"><span class="txt">Section 2</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
