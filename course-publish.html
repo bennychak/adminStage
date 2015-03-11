@@ -256,25 +256,16 @@
                                                 <label>推送目录<span class="brand-warning">*</span> <a href="./help.html" title="目录说明"><i class="fa fa-question-circle"></i></a></label>
                                             </div>
                                         </div>
-                                        <div class="form-inline col-xs-12 js-select-cate-group">
+                                        <div class="form-inline col-xs-12">
                                             <div class="form-group">
-                                                <select name="courseList" class="form-control select-cateOption">
+                                                <select name="courseList" class="form-control">
                                                     <option selected="selected" value="">选择一级分类</option>
                                                     <option value="一级分类">一级分类</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <div class="form-group select-addInput">
-                                                    <button class="btn btn-link js-select-cate"><i class="fa fa-plus"></i> 添加一级分类</button>
-                                                </div>
-                                                <div class="form-group select-addInput" style="display:none">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" maxlength="100" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input disabled="disabled" type="button" class="btn btn-primary select-addBtn" value="添加" />
-                                                        <input type="button" class="btn btn-default js-select-cate" value="取消" />
-                                                    </div>
+                                                <div class="form-group">
+                                                    <a href="###" class="btn btn-link"><i class="fa fa-plus"></i> 添加一级分类</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -306,25 +297,16 @@
                                     </div>
                                     <!-- 选择一级分类后显示 -->
                                     <div class="row">
-                                        <div class="form-inline col-xs-12 js-select-cate-group">
+                                        <div class="form-inline col-xs-12">
                                             <div class="form-group">
-                                                <select name="courseList" class="form-control select-cateOption">
+                                                <select name="courseList" class="form-control">
                                                     <option selected="selected" value="">选择二级分类</option>
                                                     <option value="二级分类">二级分类</option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <div class="form-group select-addInput">
-                                                    <button class="btn btn-link js-select-cate"><i class="fa fa-plus"></i> 添加二级分类</button>
-                                                </div>
-                                                <div class="form-group select-addInput" style="display:none">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" maxlength="100" />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input disabled="disabled" type="button" class="btn btn-primary select-addBtn" value="添加" />
-                                                        <input type="button" class="btn btn-default js-select-cate" value="取消" />
-                                                    </div>
+                                                <div class="form-group">
+                                                    <a href="###" class="btn btn-link"><i class="fa fa-plus"></i> 添加二级分类</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -449,29 +431,6 @@
 
 <script>
 $(function(){
-
-    // 添加select项
-    $('.js-select-cate').click(function(){
-        $(this).parents('.js-select-cate-group').find('.select-addCate,.select-addInput').toggle();
-    });
-    $('.select-addInput input[type="text"]').on('keyup',function(){
-        var $addBtn = $(this).parents('.js-select-cate-group').find('.select-addBtn');
-        if($(this).val().length > 0){
-            $addBtn.removeAttr('disabled');
-        }else{
-            $addBtn.attr('disabled',true);
-        }
-    });
-    $('.select-addBtn').click(function(){
-        var $optInput = $(this).parents('.js-select-cate-group').find('.select-addInput input[type="text"]');
-        var $optCate = $(this).parents('.js-select-cate-group').find('.select-cateOption');
-        if($optInput.val().length > 0){
-            $optCate.children('option').removeAttr('selected');
-            $optCate.append('<option selected="selected">' + $optInput.val() + '</option>');
-            $optInput.val('');
-        }
-    });
-
 
     //上传input
     $("#catePicFile").filestyle({buttonName: "btn-default", buttonText: "选择分类图片"});
