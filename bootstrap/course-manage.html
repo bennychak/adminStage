@@ -2,6 +2,8 @@
 @@include('inc/header.html')
 <!-- /header -->
 
+<link href="./bootstrap/dist/css/course.css" rel="stylesheet">
+
 <style>
 #dataTables-course_filter,
 #dataTables-course_length{ display:none}
@@ -61,8 +63,13 @@
                                     <option value="week">本周</option>
                                 </select>
                                 <select name="courseCate" id="data-select-cate" class="form-control">
-                                    <option value="">类型</option>
+                                    <option value="">全部课程类型</option>
                                     <option value="视频">视频</option>
+                                </select>
+                                <select name="courseCate" id="data-select-status" class="form-control">
+                                    <option value="">全部课程状态</option>
+                                    <option value="未发布">未发布</option>
+                                    <option value="已发布">已发布</option>
                                 </select>
                                 <input id="dt-sch-name" type="text" placeholder="关键字" class="form-control"/>
                             </div>
@@ -81,18 +88,34 @@
                                             <th class="data-select-time">添加时间</th>
                                             <th class="data-select-group">课程标签</th>
                                             <th class="data-select-account">操作帐号</th>
-                                            <th>操作</th>
+                                            <th class="data-select-status">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><a href="#">课程名称</a></td>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
                                             <td>张三</td>
                                             <td>视频</td>
                                             <td>2015-1-1 23:00:00</td>
                                             <td>入职培训, 新人破冰</td>
                                             <td>Admin</td>
                                             <td>
+                                                <span class="gray-light" style="display:none">未发布</span>
+                                                <!-- 开发注意询问产品此处链接的权限 -->
+                                                <a href="./course-publish.html">发布</a>
+                                                <a href="./course-edit.html">编辑</a>
+                                                <a href="###" data-toggle='modal' data-target='#dialog-deleteconfirm'>删除</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="###" data-toggle="modal" data-target="#course-detail-preview">课程名称</a></td>
+                                            <td>张三</td>
+                                            <td>图片</td>
+                                            <td>2015-1-1 23:00:00</td>
+                                            <td>入职培训, 新人破冰</td>
+                                            <td>Admin</td>
+                                            <td>
+                                                <span class="gray-light">已发布</span>
                                                 <a href="./course-edit.html">编辑</a>
                                                 <a href="###" data-toggle='modal' data-target='#dialog-deleteconfirm'>删除</a>
                                             </td>
@@ -134,6 +157,46 @@
     @@include('inc/foot-js.html')
     <!-- /foot-js -->
 
+    <!-- Preview -->
+    <div class="modal fade" id="course-detail-preview" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="width:352px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">课程预览</h4>
+          </div>
+          <div class="modal-body">
+            <div class="course_editor clearfix">
+                <div class="course_editor_c1">
+                    <div class="course_info_preview">
+                        <div class="info_cover">
+                            <i class="placetxt">封面图片</i>
+                            <!-- 上传后异步更改img的src -->
+                            <img id="info_cover_img" src="http://www.lorempixel.com/290/160/" alt="" />
+                            <div class="info_desc">Course Name</div>
+                        </div>
+                        <div class="section_list">
+                            <ul class="clearfix">
+                                <!-- role自增长 -->
+                                <li class="item" role="1">
+                                    <div class="section_txt"><span class="txt">Section 1</span></div>
+                                </li>
+                                <li class="item" role="2">
+                                    <div class="section_txt"><span class="txt">Section 2</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
@@ -161,7 +224,7 @@
 
             initComplete: function () {
      
-                $('#data-select-time,#data-select-cate').on('change',function(){
+                $('#data-select-time,#data-select-cate,#data-select-status').on('change',function(){
 
                     $('#dataTables-course').DataTable().column('.' + $(this).attr('id')).search(this.value).draw();
 

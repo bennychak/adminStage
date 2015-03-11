@@ -162,13 +162,10 @@
                 <a href="course-create.html">添加课程</a>
             </li>
             <li>
-                <a href="course-unpublished.html">待发布课程管理</a>
+                <a href="course-manage.html">课程库</a>
             </li>
             <li>
                 <a href="course-published.html">已发布课程管理</a>
-            </li>
-            <li>
-                <a href="course-manage.html">课程库</a>
             </li>
         </ul>
     </li>
@@ -199,26 +196,26 @@
                 <div class="panel panel-default">
                 <div class="panel-body">
                 <form id="form-notice" class="form-notice" role="form" action="">
-                    <div class="row">
-                        <div class="form-group col-xs-3">                    
-                            <label>通知类型</label>
-                            <select name="" id="notice-cateOption" class="form-control">
-                                <option value="临时通知">临时通知</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="form-inline col-xs-12">
-                            <div id="notice-addCate" class="form-group">
-                                <input type="button" class="btn btn-primary js-notice-cate" value="添加通知类型" />
+                    <div class="row js-select-cate-group">
+                        <div class="form-group clearfix">
+                            <div class="form-inline col-xs-12">                 
+                                <label>通知类型</label>
                             </div>
-                            <div id="notice-addInput" class="form-group" style="display:none">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" maxlength="100" />
+                            <div class="form-inline col-xs-12">   
+                                <select name="" class="form-control select-cateOption">
+                                    <option value="临时通知">临时通知</option>
+                                </select>
+                                <div class="form-group select-addCate">
+                                    <button class="btn btn-link js-select-cate"><i class="fa fa-plus"></i> 添加通知类型</button>
                                 </div>
-                                <div class="form-group">
-                                    <input disabled="disabled" id="notice-addBtn" type="button" class="btn btn-primary" value="添加" />
-                                    <input type="button" class="btn btn-default js-notice-cate" value="取消" />
+                                <div class="form-group select-addInput" style="display:none">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" maxlength="100" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input disabled="disabled" type="button" class="btn btn-primary select-addBtn" value="添加" />
+                                        <input type="button" class="btn btn-default js-select-cate" value="取消" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -374,21 +371,25 @@
     $(function(){
         $('.seList').selectlist();
         $('#sendTime').timepicker();
-        $('.js-notice-cate').click(function(){
-            $('#notice-addCate,#notice-addInput').toggle();
+
+        // 添加select项
+        $('.js-select-cate').click(function(){
+            $(this).parents('.js-select-cate-group').find('.select-addCate,.select-addInput').toggle();
         });
-        $('#notice-addInput input[type="text"]').on('keyup',function(){
+        $('.select-addInput input[type="text"]').on('keyup',function(){
+            var $addBtn = $(this).parents('.js-select-cate-group').find('.select-addBtn');
             if($(this).val().length > 0){
-                $('#notice-addBtn').removeAttr('disabled');
+                $addBtn.removeAttr('disabled');
             }else{
-                $('#notice-addBtn').attr('disabled',true);
+                $addBtn.attr('disabled',true);
             }
         });
-        $('#notice-addBtn').click(function(){
-            var $optInput = $('#notice-addInput input[type="text"]');
+        $('.select-addBtn').click(function(){
+            var $optInput = $(this).parents('.js-select-cate-group').find('.select-addInput input[type="text"]');
+            var $optCate = $(this).parents('.js-select-cate-group').find('.select-cateOption');
             if($optInput.val().length > 0){
-                $('#notice-cateOption > option').removeAttr('selected');
-                $('#notice-cateOption').append('<option selected="selected">' + $optInput.val() + '</option>');
+                $optCate.children('option').removeAttr('selected');
+                $optCate.append('<option selected="selected">' + $optInput.val() + '</option>');
                 $optInput.val('');
             }
         });
