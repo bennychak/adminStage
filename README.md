@@ -1,7 +1,26 @@
 微助产品后台
 ==========
 
-FileUpload组件：https://blueimp.github.io/jQuery-File-Upload/
+
+
+
+下拉select模拟
+fuelux  
+http://getfuelux.com
+
+表单前端验证  
+bootstrapValidator  
+http://formvalidation.io
+
+信息表格  
+datatables  
+http://www.datatables.net
+
+文件上传控件  
+https://blueimp.github.io/jQuery-File-Upload
+
+日期时间控件  
+http://jdewit.github.com/bootstrap-timepicker
 
 * 表格的前置checkbox批量编辑 请林栋参考下 https://editor.datatables.net/examples/inline-editing/simple
 
