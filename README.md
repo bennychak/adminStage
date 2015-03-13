@@ -1,11 +1,12 @@
 微助产品后台前端重构
 ==========
 
-##框架和主控件
+##框架和主要控件
 
 bootstrap + jQuery  
 font-awesome图标库  
-SB Admin 2 后台结构模块
+SB Admin 2 后台结构模块  
+百度umeditor编辑器
 
 ##业务页面
 
@@ -55,7 +56,7 @@ SB Admin 2 后台结构模块
 帮助页x1：  
 帮助页help.html
 
-##组件
+##功能控件
 
 下拉select模拟  
 fuelux  
