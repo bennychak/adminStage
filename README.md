@@ -14,15 +14,14 @@ http://formvalidation.io
 
 信息表格  
 datatables  
-http://www.datatables.net
+http://www.datatables.net  
+* 表格的前置checkbox批量编辑 请参考 https://editor.datatables.net/examples/inline-editing/simple
 
 文件上传控件  
 https://blueimp.github.io/jQuery-File-Upload
 
 日期时间控件  
 http://jdewit.github.com/bootstrap-timepicker
-
-* 表格的前置checkbox批量编辑 请林栋参考下 https://editor.datatables.net/examples/inline-editing/simple
 
 150130 登录页面增加回车提交逻辑  
 150131 添加添加课程页面course-create.html  
