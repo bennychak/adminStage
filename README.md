@@ -56,6 +56,9 @@ SB Admin 2 后台结构模块
 帮助页x1：  
 帮助页help.html
 
+独立H5页x1：  
+App下载页weizhu_h5/index.html
+
 ##功能控件
 
 下拉select模拟  
@@ -78,6 +81,8 @@ https://blueimp.github.io/jQuery-File-Upload
 http://jdewit.github.com/bootstrap-timepicker
 
 ##日志（不完全）
+
+141001
 
 150130 登录页面增加回车提交逻辑  
 150131 添加添加课程页面course-create.html  
