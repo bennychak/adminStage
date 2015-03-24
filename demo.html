@@ -22,7 +22,6 @@ h2 .fix{ position:fixed; top:0; left:0; width:100%;}
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script>
 function ac(){
-	console.log(1);
 	$('h2 .txt').each(function(){
 		var topset = $(this).parent('h2').offset().top;
 		var scrollset = $(window).scrollTop();
@@ -34,8 +33,7 @@ function ac(){
 	});
 }
 $(function(){
-$(window).on('scrollstart',ac);
-$(window).on('scrollstop',ac);
+$(window).on('scroll',ac);
 });
 </script>
 </head>
