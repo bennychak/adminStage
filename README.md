@@ -83,33 +83,39 @@ http://jdewit.github.com/bootstrap-timepicker
 ##日志
 
 <table width="100%">
+<thead>
+<th>日期</th>
+<th>提交次数</th>
+<th>日志</th>
+</thead>
+<tbody>
 <tr>
 <th>2015.3.24</th>
-<td>5次提交</td>
+<td>5</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2015.3.16</th>
-<td>1次提交</td>
+<td>1</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2015.3.14</th>
-<td>3次提交</td>
+<td>3</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2015.3.13</th>
-<td>3次提交</td>
+<td>3</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2015.3.11</th>
-<td>3次提交</td>
+<td>3</td>
 <td>课程管理流程优化， <br />
 	去掉“推送发布”，功能合并至“课程库”； <br />
 	课程编辑页面加“取消”  </td>
@@ -117,20 +123,20 @@ http://jdewit.github.com/bootstrap-timepicker
 
 <tr>
 <th>2015.3.10</th>
-<td>2次提交</td>
+<td>2</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2015.2.10</th>
-<td>6次提交</td>
+<td>6</td>
 <td>新的登录页 <br />
 	登录方式从js submit改成trigger submit按钮 </td>
 </tr>
 
 <tr>
 <th>2015.2.9</th>
-<td>1次提交</td>
+<td>1</td>
 <td>推送发布页course-publish.html <br />
 	帮助页help.html <br />
 	课程页面表单前端验证 <br />
@@ -144,7 +150,7 @@ http://jdewit.github.com/bootstrap-timepicker
 
 <tr>
 <th>2015.2.2</th>
-<td>2次提交</td>
+<td>2</td>
 <td>所有页面和样式改版（去响应式处理，添加课程页面） <br />
 	添加课程页面封面和章节对应交互js <br />
 	添加添加课程页面course-create.html </td>
@@ -152,99 +158,100 @@ http://jdewit.github.com/bootstrap-timepicker
 
 <tr>
 <th>2015.1.29</th>
-<td>4次提交</td>
+<td>4</td>
 <td>页面include化，含导航 <br />
 	登录页面增加回车提交逻辑</td>
 </tr>
 
 <tr>
 <th>2015.1.22</th>
-<td>1次提交</td>
+<td>1</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.12.1</th>
-<td>1次提交</td>
+<td>1</td>
 <td>课程管理、统计分析、任务考核占位 <br />
 	analysis页面x2 </td>
 </tr>
 
 <tr>
 <th>2014.11.26</th>
-<td>2次提交</td>
+<td>2</td>
 <td>删除logo下方“微助后台”文字</td>
 </tr>
 
 <tr>
 <th>2014.11.25</th>
-<td>1次提交</td>
+<td>1</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.11.23</th>
-<td>5次提交</td>
+<td>5</td>
 <td>添加登录页 导航logo</td>
 </tr>
 
 <tr>
 <th>2014.11.21</th>
-<td>6次提交</td>
+<td>6</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.11.20</th>
-<td>12次提交</td>
+<td>12</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.11.17</th>
-<td>1次提交</td>
+<td>1</td>
 <td>非data表单验证</td>
 </tr>
 
 <tr>
 <th>2014.11.14</th>
-<td>8次提交</td>
+<td>8</td>
 <td>表单验证</td>
 </tr>
 
 <tr>
 <th>2014.11.13</th>
-<td>3次提交</td>
+<td>3</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.11.12</th>
-<td>4次提交</td>
+<td>4</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.11.7</th>
-<td>1次提交</td>
+<td>1</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.10.28</th>
-<td>6次提交</td>
+<td>6</td>
 <td>新页面</td>
 </tr>
 
 <tr>
 <th>2014.9.29</th>
-<td>1次提交</td>
+<td>1</td>
 <td></td>
 </tr>
 
 <tr>
 <th>2014.9.28</th>
-<td>2次提交</td>
+<td>2</td>
 <td>建立页面分支，创建readme</td>
 </tr>
+</tbody>
 </table>
