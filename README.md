@@ -83,7 +83,7 @@ http://jdewit.github.com/bootstrap-timepicker
 ##日志
 
 <style>
-#style_tb{ display:table}
+#user-content-style_tb{ display:table}
 </style>
 <table id="style_tb">
 <thead>
