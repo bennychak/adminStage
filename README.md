@@ -110,7 +110,9 @@ http://jdewit.github.com/bootstrap-timepicker
 <tr>
 <th>2015.3.11</th>
 <td>3次提交</td>
-<td>课程管理流程优化，去掉“推送发布”，功能合并至“课程库”；课程编辑页面加“取消”  </td>
+<td>课程管理流程优化，  
+	去掉“推送发布”，功能合并至“课程库”；  
+	课程编辑页面加“取消”  </td>
 </tr>
 
 <tr>
@@ -122,25 +124,37 @@ http://jdewit.github.com/bootstrap-timepicker
 <tr>
 <th>2015.2.10</th>
 <td>6次提交</td>
-<td>新的登录页 登录方式从js submit改成trigger submit按钮 </td>
+<td>新的登录页  
+	登录方式从js submit改成trigger submit按钮 </td>
 </tr>
 
 <tr>
 <th>2015.2.9</th>
 <td>1次提交</td>
-<td>推送发布页course-publish.html 帮助页help.html 课程页面表单前端验证 已发布课程course-published.html 课程库course-manage.html 课程编辑页course-edit.html和删除浮层 课程转发course-relay.html 再次发送课程course-republish.html 手机号码浮层</td>
+<td>推送发布页course-publish.html  
+	帮助页help.html  
+	课程页面表单前端验证  
+	已发布课程course-published.html  
+	课程库course-manage.html  
+	课程编辑页course-edit.html和删除浮层  
+	课程转发course-relay.html  
+	再次发送课程course-republish.html  
+	手机号码浮层</td>
 </tr>
 
 <tr>
 <th>2015.2.2</th>
 <td>2次提交</td>
-<td>所有页面和样式改版（去响应式处理，添加课程页面） 添加课程页面封面和章节对应交互js 添加添加课程页面course-create.html </td>
+<td>所有页面和样式改版（去响应式处理，添加课程页面）  
+	添加课程页面封面和章节对应交互js  
+	添加添加课程页面course-create.html </td>
 </tr>
 
 <tr>
 <th>2015.1.29</th>
 <td>4次提交</td>
-<td>页面include化，含导航 登录页面增加回车提交逻辑</td>
+<td>页面include化，含导航  
+	登录页面增加回车提交逻辑</td>
 </tr>
 
 <tr>
@@ -152,7 +166,8 @@ http://jdewit.github.com/bootstrap-timepicker
 <tr>
 <th>2014.12.1</th>
 <td>1次提交</td>
-<td>课程管理、统计分析、任务考核占位、analysis页面x2 </td>
+<td>课程管理、统计分析、任务考核占位  
+	analysis页面x2 </td>
 </tr>
 
 <tr>
