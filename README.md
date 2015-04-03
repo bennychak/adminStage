@@ -82,11 +82,14 @@ http://jdewit.github.com/bootstrap-timepicker
 
 ##日志
 
-<table width="100%" style="display:table">
+<style>
+#style_tb{ display:table}
+</style>
+<table id="style_tb">
 <thead>
-<th>日期</th>
-<th>提交次数</th>
-<th>日志</th>
+<th>Date</th>
+<th>Commits</th>
+<th>Dialog</th>
 </thead>
 <tbody>
 <tr>
