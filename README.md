@@ -80,15 +80,30 @@ https://blueimp.github.io/jQuery-File-Upload
 日期时间控件  
 http://jdewit.github.com/bootstrap-timepicker
 
-##日志（不完全）
+##日志
 
-141001
-
-150130 登录页面增加回车提交逻辑  
-150131 添加添加课程页面course-create.html  
-150201 去响应式处理 所有页面和样式改版 添加课程页面continue  
-150204 添加课程页面封面和章节对应交互js  
-150205 手机号码浮层  
-150208 推送发布页course-publish.html 帮助页help.html 课程页面表单前端验证 已发布课程course-published.html 课程库course-manage.html 课程编辑页course-edit.html和删除浮层 课程转发course-relay.html 再次发送课程course-republish.html  
-150210 登录方式从js submit改成trigger submit按钮
-150311 课程管理流程优化，去掉“推送发布”，功能合并至“课程库”；课程编辑页面加“取消”
+2015.3.24 5次提交  
+2015.3.16 1次提交  
+2015.3.14 3次提交  
+2015.3.13 3次提交  
+2015.3.11 3次提交 课程管理流程优化，去掉“推送发布”，功能合并至“课程库”；课程编辑页面加“取消”  
+2015.3.10 2次提交  
+2015.2.10 6次提交 新的登录页 登录方式从js submit改成trigger submit按钮  
+2015.2.9 1次提交 推送发布页course-publish.html 帮助页help.html 课程页面表单前端验证 已发布课程course-published.html 课程库course-manage.html 课程编辑页course-edit.html和删除浮层 课程转发course-relay.html 再次发送课程course-republish.html 手机号码浮层  
+2015.2.2 2次提交 所有页面和样式改版（去响应式处理，添加课程页面） 添加课程页面封面和章节对应交互js 添加添加课程页面course-create.html  
+2015.1.29 4次提交 页面include化，含导航 登录页面增加回车提交逻辑  
+2015.1.22 1次提交  
+2014.12.1 1次提交 课程管理、统计分析、任务考核占位、analysis页面x2  
+2014.11.26 2次提交 删除logo下方“微助后台”文字  
+2014.11.25 1次提交  
+2014.11.23 5次提交 添加登录页 导航logo  
+2014.11.21 6次提交  
+2014.11.20 12次提交  
+2014.11.17 1次提交 非data表单验证  
+2014.11.14 8次提交 表单验证  
+2014.11.13 3次提交  
+2014.11.12 4次提交  
+2014.11.7 1次提交  
+2014.10.28 6次提交 新页面  
+2014.9.29 1次提交  
+2014.9.28 建立页面分支，创建readme
